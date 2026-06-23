@@ -10,8 +10,9 @@ if 'gizli_sayi' not in st.session_state:
     st.session_state.tahmin_sayisi = 0
     st.session_state.oyun_bitti = False
 
-# Kullanıcıdan tahmin alma alanı
-tahmin = st.number_input("Tahmininiz:", min_value=1, max_value=100, step=1, key="tahmin_input")
+# Değişiklik BURADA: number_input yerine slider kullanıyoruz.
+# Basılı tutup sağa sola kaydırarak hızlıca sayıyı seçebilirsin.
+tahmin = st.slider("Tahmininiz:", min_value=1, max_value=100, value=50, step=1)
 
 # "Tahmin Et" butonu
 if st.button("Tahmin Et") and not st.session_state.oyun_bitti:
